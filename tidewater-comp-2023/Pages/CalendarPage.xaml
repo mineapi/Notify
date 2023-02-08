@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:pane="clr-namespace:tidewater_comp_2023.Pane"
+             x:Class="tidewater_comp_2023.CalendarPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" BackgroundColor="#3f48cc" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" FontFamily="MaterialIcons" Text="&#xe5d2;" HeightRequest="50" WidthRequest="50" FontSize="42" BackgroundColor="#3f48cc" Padding="0" Clicked="Btn_menu_OnClicked" Margin="25, 0, 0 ,0"/>
+            <Label Grid.Column="1" Text="Calendar" TextColor="White" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="SegoeUIBold"/>
+            <Button Grid.Column="2" Text="&#xe145;" FontFamily="MaterialIcons" BackgroundColor="Transparent" FontSize="42" Margin="20" Padding="0" Clicked="NewEventButton_OnClicked"/>
+        </Grid>
+
+        <pane:CalendarPane x:Name="CalendarPane" Grid.Row="1"/>
+        <Line Grid.Row="2" Stroke="#e5e9eb" StrokeThickness="2" X1="0" X2="1000" Y1="1" Y2="1" Margin="8" />
+        <pane:CalendarEventPane x:Name="EventPane" Grid.Row="3" />
+    </Grid>
+</ContentPage>

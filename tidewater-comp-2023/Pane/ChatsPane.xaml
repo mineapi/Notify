@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tidewater_comp_2023.Pane.ChatsPane">
+    <CollectionView x:Name="chatsList"
+                            x:FieldModifier="public"
+                            SelectionMode="Single"
+                            Margin="0, 10">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                   Source="{Binding RecipientProfilePicture}"
+                                   VerticalOptions="Center"
+                                   Margin="0"/>
+                    <Label Grid.Row="0" Grid.Column="2"
+                                   Text="{Binding RecipientName}"
+                                   TextColor="Black"
+                                   FontSize="20"/>
+                    <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2"
+                                   Text="{Binding ChatDate}"
+                                   TextColor="Gray"
+                                   FontSize="16"
+                                   HorizontalOptions="End"/>
+                    <Label Grid.Row="1"  Grid.Column="2" Grid.ColumnSpan="2"
+                                   Text="{Binding LastMessage}"
+                                   TextColor="Gray"
+                                   FontSize="16"/>
+                    <Line Grid.Row="3" Grid.ColumnSpan="5"
+                                  X1="0"
+                                  Y1="1"
+                                  X2="500"
+                                  Y2="1"
+                                  Stroke="#f1f3f5"/>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+    </CollectionView>
+</ContentView>

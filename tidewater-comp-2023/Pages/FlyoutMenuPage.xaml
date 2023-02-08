@@ -1,0 +1,91 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tidewaterComp2023="clr-namespace:tidewater_comp_2023"
+             xmlns:pages="clr-namespace:tidewater_comp_2023.Pages"
+             x:Class="tidewater_comp_2023.FlyoutMenuPage"
+             Padding="0,0,0,0"
+             IconImageSource="icon_menu.png"
+             Title="Notify">
+    <ContentPage.BackgroundColor>
+        <Color>#3f48cc</Color>
+    </ContentPage.BackgroundColor>
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="#2652d9" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="280" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.45*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.45*"/>
+
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Grid.Row="0" FontFamily="MaterialIcons" Text="&#xe5d2;" HeightRequest="50" WidthRequest="50" FontSize="42" BackgroundColor="#3f48cc" Padding="0" Clicked="Btn_menu_OnClicked" Margin="25, 0, 0 ,0"/>
+        <Image Grid.Column="1" Grid.Row="0" Source="logo_landing.png"/>
+        <CollectionView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" x:Name="collectionView"
+                        x:FieldModifier="public"
+                        SelectionMode="Single">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type tidewaterComp2023:FlyoutPageItem}">
+                    <tidewaterComp2023:FlyoutPageItem Title="Home"
+                                                      IconSource="icon_home.png"
+                                                      TargetType="{x:Type tidewaterComp2023:HomePage}" />
+                    <tidewaterComp2023:FlyoutPageItem Title="Calendar"
+                                                      IconSource="icon_calendar.png"
+                                                      TargetType="{x:Type tidewaterComp2023:CalendarPage}" />
+                    <tidewaterComp2023:FlyoutPageItem Title="Chat"
+                                                      IconSource="icon_chat.png"
+                                                      TargetType="{x:Type pages:ChatPage}" />
+                    <tidewaterComp2023:FlyoutPageItem Title="Help"
+                                                      IconSource="icon_help.png"
+                                                      TargetType="{x:Type pages:HelpPage}" />
+                    <tidewaterComp2023:FlyoutPageItem Title="Exit"
+                                                      IconSource="icon_exit.png"
+                                                      TargetType="{x:Type tidewaterComp2023:RoleSelectionPage}" />
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="1" Source="{Binding IconSource}"/>
+                        <Label Grid.Column="2"
+                               Margin="20,0"
+                               Text="{Binding Title}"
+                               FontSize="20"
+                               VerticalOptions="Center"
+                               TextColor="White"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <HorizontalStackLayout Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="30, 0">
+            <Label Text="Follow Us" TextColor="White" FontSize="24" VerticalOptions="Center"/>
+            <Image Source="icon_facebook.png" HeightRequest="35" Margin="5, 0"/>
+            <Image Source="icon_instagram.png" HeightRequest="35" Margin="5, 0"/>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

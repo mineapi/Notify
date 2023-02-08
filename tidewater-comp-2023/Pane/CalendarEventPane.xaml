@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tidewater_comp_2023.Pane.CalendarEventPane">
+    <CollectionView x:Name="eventsList"
+                    x:FieldModifier="public"
+                    SelectionMode="None">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Margin="20, 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Text="{Binding DateString}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Line Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Stroke="#0365fe" X1="0" X2="1" Y1="0" Y2="60" />
+                    <Label Grid.Column="2" Grid.Row="0" Text="{Binding Title}" VerticalOptions="End" FontSize="16" />
+                    <Label Grid.Column="2" Grid.Row="1" Text="{Binding TimeString}" VerticalOptions="Start" TextColor="Gray" Margin="0, 5, 0, 0"/>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentView>

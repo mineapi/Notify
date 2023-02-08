@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tidewater_comp_2023.Pane.AbscencePane">
+    <VerticalStackLayout>
+        <HorizontalStackLayout Margin="0, 0, 0, 15">
+            <Label Text="Student ID: " FontSize="18" Margin="0, 0, 10, 0" VerticalOptions="Center"/>
+            <Frame WidthRequest="150" Padding="0">
+                <Entry x:Name="IDEntry" FontSize="18" Margin="10, 0, 10, 0"/>
+            </Frame>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="0, 0, 0, 15">
+            <Label Text="Date: " FontSize="18" Margin="0, 0, 10, 0" VerticalOptions="Center"/>
+            <Frame WidthRequest="150" Padding="0">
+                <DatePicker x:Name="DatePicker" FontSize="18" Margin="10, 0, 10, 0" />
+            </Frame>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="0, 0, 0, 15">
+            <Label Text="Time: " FontSize="18" Margin="0, 0, 10, 0" VerticalOptions="Center"/>
+            <Frame WidthRequest="150" Padding="0">
+                <TimePicker x:Name="TimePicker" FontSize="18" Margin="10, 0, 10, 0" />
+            </Frame>
+        </HorizontalStackLayout>
+        <Button Text="Submit" FontSize="18" BackgroundColor="#2867fa" HorizontalOptions="Start" WidthRequest="100" Clicked="SubmitButton_Clicked"/>
+    </VerticalStackLayout>
+</ContentView>

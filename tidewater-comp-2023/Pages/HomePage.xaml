@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tidewaterComp2023="clr-namespace:tidewater_comp_2023"
+             x:Class="tidewater_comp_2023.HomePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" BackgroundColor="#3f48cc" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" FontFamily="MaterialIcons" Text="&#xE5D2;" Grid.RowSpan="3" HeightRequest="50" WidthRequest="50" FontSize="42" BackgroundColor="#3f48cc" Margin="25, 0, 0 ,0" Padding="0" Clicked="Btn_menu_OnClicked"/>
+            <!--<ImageButton x:Name="btn_menu" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Source="menu.png" HeightRequest="30" WidthRequest="30" BackgroundColor="#3f48cc" Margin="25, 0, 0 ,0"  Clicked="Btn_menu_OnClicked"/>-->
+            <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" HeightRequest="60" Source="icon_profile.png" Margin="0, 0, 20, 0" HorizontalOptions="End" />
+            <Label Grid.Row="1" Grid.Column="2" Text="John Doe" TextColor="White" FontSize="24" VerticalOptions="End" FontAttributes="Bold"/>
+            <Label x:Name="RoleLabel" Grid.Row="2" Grid.Column="2" TextColor="White" FontSize="18" VerticalOptions="Start" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout x:Name="Layout" Margin="50, 20">
+                <Label TextColor="Black" Text="Announcements" FontFamily="SegoeUIBold" FontSize="24"/>
+                <tidewaterComp2023:AnnouncementPane x:Name="AnnouncementPane"/>
+                <Label TextColor="Black" Text="Coming Up" FontFamily="SegoeUIBold" FontSize="24"/>
+                <tidewaterComp2023:ComingUpPane x:Name="ComingUpPane"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

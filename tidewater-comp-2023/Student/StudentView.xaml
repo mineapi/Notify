@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tidewaterComp2023="clr-namespace:tidewater_comp_2023"
+             x:Class="tidewater_comp_2023.StudentView"
+             Title="StudentView">
+    <FlyoutPage.Flyout>
+        <tidewaterComp2023:FlyoutMenuPage x:Name="flyoutPage"/>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage x:Name="Nav">
+            <x:Arguments>
+                <tidewaterComp2023:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

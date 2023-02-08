@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tidewater_comp_2023.Pages.ExpandChat">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="90" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="10, 10, 10, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="80" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Text="&#xF0B0;" FontSize="18" FontAttributes="Bold" WidthRequest="50" FontFamily="Icons" CornerRadius="100" TextColor="#3f48cc" Padding="0" BackgroundColor="Transparent" Clicked="BackButton_OnClicked"/>
+        </Grid>
+
+        <ScrollView x:Name="ScrollView" Grid.Row="1" >
+            <VerticalStackLayout Grid.Row="0">
+                <Frame HeightRequest="100" WidthRequest="100" Padding="0" CornerRadius="100" BorderColor="Transparent" Margin="15">
+                    <Image x:Name="ProfilePictureImage" />
+                </Frame>
+                <Label x:Name="NameLabel" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="5" FontSize="20"/>
+                <Label x:Name="EmailLabel" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="16" TextColor="Gray"/>
+                <Frame BorderColor="Transparent" Padding="0" Margin="0, 100, 0, 0">
+                    <VerticalStackLayout>
+                        <Line
+                                X1="0"
+                                Y1="1"
+                                X2="500"
+                                Y2="1"
+                                Stroke="#cfd6db" TranslationY="9"/>
+                        <Label Text="Today" BackgroundColor="White" Margin="120, 0, 120, 0" FontSize="13" TextColor="Gray" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <VerticalStackLayout x:Name="ChatArea" Margin="0, 20, 0, 20" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Grid Grid.Row="2" BackgroundColor="#e6effe" Padding="30, 20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Column="0" Margin="0, 5, 15, 5" CornerRadius="100" BorderColor="Transparent" Padding="0, 0, 0, 0">
+                <HorizontalStackLayout>
+                    <Button Text="&#xe3f4;"  CornerRadius="100" FontFamily="MaterialIcons" BackgroundColor="Transparent" TextColor="#3f48cc" WidthRequest="39" FontSize="24" Padding="0" Clicked="ImageButton_OnClicked"/>
+                    <Entry x:Name="Chatbox" BackgroundColor="Transparent" Margin="5, 0, 0, 0" WidthRequest="223" VerticalOptions="Center" FontSize="16" />
+                </HorizontalStackLayout>
+            </Frame>
+            <Button Grid.Column="1" Text="&#xe163;" BackgroundColor="#3f48cc" FontFamily="MaterialIcons" CornerRadius="100" FontSize="18" Margin="5" Padding="0" Clicked="SendButton_OnClicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pane="clr-namespace:tidewater_comp_2023.Pane"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             x:Class="tidewater_comp_2023.Pages.HelpPage"
+             Title="HelpPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" BackgroundColor="#3f48cc" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" FontFamily="MaterialIcons" Text="&#xe5d2;" HeightRequest="50" WidthRequest="50" FontSize="42" BackgroundColor="#3f48cc" Padding="0" Clicked="Btn_menu_OnClicked" Margin="25, 0, 0 ,0"/>
+            <Label Grid.Column="1" Text="Help" TextColor="White" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="SegoeUIBold"/>
+
+        </Grid>
+
+        <VerticalStackLayout Margin="50, 20" Grid.Row="1">
+            <Label Text="Report a problem" FontSize="22" Margin="0, 0, 0, 20"/>
+            <HorizontalStackLayout Margin="0, 0, 0, 20">
+                <Label Text="Issue: " FontSize="18" VerticalOptions="Center" />
+                <Frame Padding="0" VerticalOptions="Center" WidthRequest="150">
+                    <Picker x:Name="IssueTypePicker" Margin="10, 0, 0, 0" Title="Select an issue" TitleColor="Gray">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Unable to send messages/images</x:String>
+                                <x:String>App is glitchy</x:String>
+                                <x:String>Other</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+            </HorizontalStackLayout>
+            <Label Text="Description:" FontSize="18" Margin="0, 0, 0, 20"/>
+            <Frame Padding="0" HeightRequest="250" >
+                <Editor x:Name="DescriptionEditor" WidthRequest="250"/>
+            </Frame>
+            <Button Text="Submit" Margin="0, 30, 0, 0" BackgroundColor="#0064fe" HorizontalOptions="Start" WidthRequest="100" Clicked="SubmitButton_OnClicked"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

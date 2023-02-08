@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tidewater_comp_2023.RoleSelectionPage"
+             Title="RoleSelectionPage">
+    <Grid BackgroundColor="#0064fe">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*" /> <!--Spacing top-->
+            <RowDefinition Height="15*" /> <!--Logo-->
+            <RowDefinition Height="15*" /> <!--Button1-->
+            <RowDefinition Height="15*" /> <!--Button2-->
+            <RowDefinition Height="25*" /> <!--Space end-->
+        </Grid.RowDefinitions>
+        <Image Grid.Row="1" Source="logo_landing.svg" HeightRequest="100"/>
+        <Button Grid.Row="2" x:Name="btn_parent" Text="I am a Parent" Clicked="Btn_parent_OnClicked" Margin="60, 25, 60, 25" BackgroundColor="White" TextColor="#0064fe"/>
+        <Button Grid.Row="3" x:Name="btn_student" Text="I am a Student" Clicked="Btn_student_OnClicked" Margin="60, 25, 60, 25" BackgroundColor="White" TextColor="#0064fe"/>
+        <Button Grid.Row="4" Text="Terms of Use" TextColor="White" BackgroundColor="Transparent" VerticalOptions="End" Margin="130, 15" FontSize="18" Clicked="TermsOfUseButton_OnClicked" />
+    </Grid>
+</ContentPage>
